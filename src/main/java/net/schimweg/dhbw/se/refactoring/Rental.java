@@ -18,14 +18,6 @@ public class Rental {
     }
 
     public double getAmount() {
-        switch (movie.getPriceCode()) {
-            case REGULAR:
-                return 2 + Math.max(0,  (daysRented - 2) * 1.5);
-            case NEW_RELEASE:
-                return daysRented * 3;
-            case CHILDREN:
-                return 1.5 + Math.max(0, (daysRented - 3) * 1.5);
-        }
-        return 0;
+        return movie.getPriceCode().getPriceFunction().apply(daysRented);
     }
 }

@@ -1,8 +1,8 @@
 package net.schimweg.dhbw.se.refactoring;
 
 public class Movie {
-    private String title;
-    private MoviePriceCode priceCode;
+    private final String title;
+    private final MoviePriceCode priceCode;
 
     public Movie(String title, MoviePriceCode priceCode) {
         this.title = title;

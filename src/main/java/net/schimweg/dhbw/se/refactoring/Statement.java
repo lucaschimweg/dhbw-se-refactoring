@@ -30,7 +30,6 @@ public class Statement {
             result.append("\t").append(each.getMovie().getTitle()).append("\t").append("\t").append(each.getDaysRented()).append("\t").append(each.getAmount()).append("\n");
         }
 
-        //add footer lines
         result.append("Amount owed is ").append(getTotalAmount()).append("\n");
         result.append("You earned ").append(getFrequentRenterPoints()).append(" frequent renter points");
         return result.toString();

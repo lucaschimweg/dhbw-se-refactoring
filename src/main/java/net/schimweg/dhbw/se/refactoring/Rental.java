@@ -18,22 +18,14 @@ public class Rental {
     }
 
     public double getAmount() {
-        double thisAmount = 0;
         switch (movie.getPriceCode()) {
             case Movie.REGULAR:
-                thisAmount += 2;
-                if (daysRented > 2)
-                    thisAmount += (daysRented - 2) * 1.5;
-                break;
+                return 2 + Math.max(0,  (daysRented - 2) * 1.5);
             case Movie.NEW_RELEASE:
-                thisAmount += daysRented * 3;
-                break;
+                return daysRented * 3;
             case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (daysRented > 3)
-                    thisAmount += (daysRented - 3) * 1.5;
-                break;
+                return 1.5 + Math.max(0, (daysRented - 3) * 1.5);
         }
-        return thisAmount;
+        return 0;
     }
 }

@@ -1,4 +1,6 @@
-class Rental {
+package net.schimweg.dhbw.se.refactoring;
+
+public class Rental {
     private Movie movie;
     private int daysRented;
 

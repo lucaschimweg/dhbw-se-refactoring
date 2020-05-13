@@ -1,4 +1,4 @@
-import java.util.Enumeration;
+package net.schimweg.dhbw.se.refactoring;
 
 public class Statement {
 
@@ -23,7 +23,7 @@ public class Statement {
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder("Rental Record for " + customer.getName() + "\n");
+        StringBuilder result = new StringBuilder("net.schimweg.dhbw.se.refactoring.Rental Record for " + customer.getName() + "\n");
         result.append("\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n");
 
         for (Rental each : customer.getRentals()) {

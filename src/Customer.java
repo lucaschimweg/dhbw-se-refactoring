@@ -25,9 +25,8 @@ class Customer {
         StringBuilder result = new StringBuilder("Rental Record for " + this.getName() + "\n");
         result.append("\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n");
 
-        while (enum_rentals.hasMoreElements()) {
+        for (Rental each : rentals) {
             double thisAmount = 0;
-            Rental each = enum_rentals.nextElement();
             //determine amounts for each line
             thisAmount = amountFor(each);
             // add frequent renter points

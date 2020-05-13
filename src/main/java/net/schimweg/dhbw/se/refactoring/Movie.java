@@ -1,22 +1,19 @@
 package net.schimweg.dhbw.se.refactoring;
 
 public class Movie {
-    public static final int CHILDRENS = 2;
-    public static final int REGULAR = 0;
-    public static final int NEW_RELEASE = 1;
     private String title;
-    private int priceCode;
+    private MoviePriceCode priceCode;
 
-    public Movie(String newtitle, int newpriceCode) {
-        title = newtitle;
-        priceCode = newpriceCode;
+    public Movie(String title, MoviePriceCode priceCode) {
+        this.title = title;
+        this.priceCode = priceCode;
     }
 
-    public int getPriceCode() {
+    public MoviePriceCode getPriceCode() {
         return priceCode;
     }
 
-    public void setPriceCode(int arg) {
+    public void setPriceCode(MoviePriceCode arg) {
         priceCode = arg;
     }
 

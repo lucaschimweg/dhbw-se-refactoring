@@ -19,11 +19,11 @@ public class Rental {
 
     public double getAmount() {
         switch (movie.getPriceCode()) {
-            case Movie.REGULAR:
+            case REGULAR:
                 return 2 + Math.max(0,  (daysRented - 2) * 1.5);
-            case Movie.NEW_RELEASE:
+            case NEW_RELEASE:
                 return daysRented * 3;
-            case Movie.CHILDRENS:
+            case CHILDREN:
                 return 1.5 + Math.max(0, (daysRented - 3) * 1.5);
         }
         return 0;

@@ -1,7 +1,6 @@
 package net.schimweg.dhbw.se.refactoring;
 
-import java.lang.*;
-import java.util.*;
+import java.util.Vector;
 
 public class Customer {
     private final String name;

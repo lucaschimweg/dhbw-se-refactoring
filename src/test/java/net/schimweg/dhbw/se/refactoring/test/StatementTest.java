@@ -1,6 +1,10 @@
 package net.schimweg.dhbw.se.refactoring.test;
 
-import net.schimweg.dhbw.se.refactoring.*;
+import net.schimweg.dhbw.se.refactoring.Customer;
+import net.schimweg.dhbw.se.refactoring.Rental;
+import net.schimweg.dhbw.se.refactoring.Statement;
+import net.schimweg.dhbw.se.refactoring.Movie;
+import net.schimweg.dhbw.se.refactoring.MoviePriceCode;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,55 +12,55 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StatementTest {
 
     @Test
-    void getFrequentRenterPoints1() {
+    private void getFrequentRenterPoints1() {
         Customer c = new Customer("Name");
         c.addRental(new Rental(new Movie("Test", MoviePriceCode.NEW_RELEASE), 5));
         assertEquals(2, new Statement(c).getFrequentRenterPoints());
     }
 
     @Test
-    void getFrequentRenterPoints2() {
+    private void getFrequentRenterPoints2() {
         Customer c = new Customer("Name");
         c.addRental(new Rental(new Movie("Test", MoviePriceCode.CHILDREN), 5));
         assertEquals(1, new Statement(c).getFrequentRenterPoints());
     }
 
     @Test
-    void getFrequentRenterPoints3() {
+    private void getFrequentRenterPoints3() {
         Customer c = new Customer("Name");
         c.addRental(new Rental(new Movie("Test", MoviePriceCode.REGULAR), 5));
         assertEquals(1, new Statement(c).getFrequentRenterPoints());
     }
 
     @Test
-    void getFrequentRenterPoints4() {
+    private void getFrequentRenterPoints4() {
         Customer c = new Customer("Name");
         c.addRental(new Rental(new Movie("Test", MoviePriceCode.NEW_RELEASE), 1));
         assertEquals(1, new Statement(c).getFrequentRenterPoints());
     }
 
     @Test
-    void getFrequentRenterPoints5() {
+    private void getFrequentRenterPoints5() {
         Customer c = new Customer("Name");
         c.addRental(new Rental(new Movie("Test", MoviePriceCode.CHILDREN), 1));
         assertEquals(1, new Statement(c).getFrequentRenterPoints());
     }
 
     @Test
-    void getFrequentRenterPoints6() {
+    private void getFrequentRenterPoints6() {
         Customer c = new Customer("Name");
         c.addRental(new Rental(new Movie("Test", MoviePriceCode.REGULAR), 1));
         assertEquals(1, new Statement(c).getFrequentRenterPoints());
     }
 
     @Test
-    void getFrequentRenterPoints7() {
+    private void getFrequentRenterPoints7() {
         Customer c = new Customer("Name");
         assertEquals(0, new Statement(c).getFrequentRenterPoints());
     }
 
     @Test
-    void getTotalAmount1() {
+    private void getTotalAmount1() {
         Customer c = new Customer("Name");
         Rental r = new Rental(new Movie("Test", MoviePriceCode.CHILDREN), 5);
         c.addRental(r);
@@ -64,7 +68,7 @@ public class StatementTest {
     }
 
     @Test
-    void getTotalAmount2() {
+    private void getTotalAmount2() {
         Customer c = new Customer("Name");
         Rental r = new Rental(new Movie("Test", MoviePriceCode.CHILDREN), 5);
         Rental r2 = new Rental(new Movie("Test2", MoviePriceCode.NEW_RELEASE), 20);
@@ -74,7 +78,7 @@ public class StatementTest {
     }
 
     @Test
-    void toString1() {
+    private void toString1() {
         Customer c = new Customer("Name");
         assertEquals("Rental Record for Name\n" +
                 "\tTitle\t\tDays\tAmount\n" +
@@ -83,7 +87,7 @@ public class StatementTest {
     }
 
     @Test
-    void toString2() {
+    private void toString2() {
         Customer c = new Customer("Name");
         Rental r = new Rental(new Movie("Test", MoviePriceCode.CHILDREN), 5);
         Rental r2 = new Rental(new Movie("Test2", MoviePriceCode.NEW_RELEASE), 20);
